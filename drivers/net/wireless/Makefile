@@ -55,10 +55,11 @@ obj-$(CONFIG_WL_TI)	+= ti/
 
 obj-$(CONFIG_MWIFIEX)	+= mwifiex/
 
+obj-$(CONFIG_SOMC_WIFI_CONTROL)	+= somcwifictrl/
+
 obj-$(CONFIG_BCMDHD)	+= bcmdhd/
 obj-$(CONFIG_BRCMFMAC)	+= brcm80211/
 obj-$(CONFIG_BRCMSMAC)	+= brcm80211/
-obj-$(CONFIG_WIFI_CONTROL_FUNC) += controlfnc/
 
 obj-$(CONFIG_LIBRA_SDIOIF)	+= libra/
 obj-$(CONFIG_WCNSS_CORE)	+= wcnss/
