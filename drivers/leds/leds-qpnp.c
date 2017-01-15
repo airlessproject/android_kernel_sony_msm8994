@@ -4527,11 +4527,11 @@ static int qpnp_leds_probe(struct spmi_device *spmi)
 			goto fail_id_check;
 		}
 
-		if (sysfs_streq(led->cdev.name, "led:rgb_red")) {
+		if (sysfs_streq(led->cdev.name, "red")) {
 			led_rgb_r = led;
-		} else if (sysfs_streq(led->cdev.name, "led:rgb_green")) {
+		} else if (sysfs_streq(led->cdev.name, "green")) {
 			led_rgb_g = led;
-		} else if (sysfs_streq(led->cdev.name, "led:rgb_blue")) {
+		} else if (sysfs_streq(led->cdev.name, "blue")) {
 			led_rgb_b = led;
 		}
 
