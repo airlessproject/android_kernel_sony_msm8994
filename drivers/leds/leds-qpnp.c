@@ -2744,6 +2744,8 @@ static void led_blink(struct qpnp_led_data *led,
 
 	cancel_work_sync(&led->work);
 	flush_work(&led->work);
+	if (led->in_order_command_processing)
+		flush_workqueue(led->workqueue);
 	mutex_lock(&led->lock);
 	if (pwm_cfg->use_blink) {
 		if (led->cdev.brightness) {
