@@ -2004,7 +2004,11 @@ void qpnp_led_rgb_set(enum rgb_color color, int brightness)
 		return;
 
 	led->cdev.brightness = brightness;
-	schedule_work(&led->work);
+
+	if (led->in_order_command_processing)
+		queue_work(led->workqueue, &led->work);
+	else
+		schedule_work(&led->work);
 }
 
 bool qpnp_led_rgb_blinking_get() {
